@@ -1,0 +1,13 @@
+.container {
+    display: grid;
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
+    border: 1px solid salmon;
+    width: 500px;
+    height: 500px;
+}
+
+.container > div {
+    background-color: pink;
+    border: 1px solid salmon;
+}
