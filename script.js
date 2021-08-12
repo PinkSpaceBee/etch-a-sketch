@@ -1,16 +1,34 @@
-let container = document.querySelector('.container');
+let container = document.querySelector('.js-container');
 let gridCell;
+let resetButton = document.querySelector('#js-reset-button');
+let cells;
 
-for(let i = 0; i < 256; i++) {
-    gridCell = document.createElement('div');
-    container.appendChild(gridCell);
+function createGrid() {
+    for(let i = 0; i < 256; i++) {
+        gridCell = document.createElement('div');
+        container.appendChild(gridCell);
+        hoverEffect();
+    }
+}
+createGrid();
+
+function removeGrid() {
+    cells.forEach(cell => cell.remove());
 }
 
-//let cells = container.children;
-let cells = Array.from(container.children);
+function hoverEffect() {
+    cells = Array.from(container.children);
+    cells.forEach(cell => cell.addEventListener('mouseover', () => {
+        cell.style.background = 'rgba(255, 135, 135, 1)';
+    }))
+}
 
-cells.forEach(cell => cell.addEventListener('mouseover', () => {
-    cell.style.background = 'rgba(255, 135, 135, 1)';
-}))
+resetButton.addEventListener('click', () => {
+    removeGrid();
+    createGrid();
+})
+
+
+
 
 
