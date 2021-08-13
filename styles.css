@@ -1,9 +1,16 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    color: rgb(255, 94, 94);
+}
+
 .js-container {
     display: grid;
     grid-template-rows: repeat(16, 1fr);
     grid-template-columns: repeat(16, 1fr);
     margin: auto;
-    margin-top: 50px;
+    margin-top: 30px;
     width: 500px;
     height: 500px;
     border: 1px solid rgba(255, 212, 196, 1);
@@ -16,18 +23,18 @@
 #js-reset-button {
     display: flex;
     margin: auto;
-    margin-top: 15px;
+    margin-top: 5px;
     padding: 20px;
     border: 1.5px solid rgba(255, 70, 70, 0.2);
     background-color: rgb(255, 213, 223);
     font-size: 16px;
-    color: rgb(255, 70, 70);
+    color: rgb(255, 94, 94);
 }
 
 #js-reset-button:hover {
     transform: scale(1.1);
     border: none;
-    box-shadow: 5px 3px rgb(255, 70, 70);
+    box-shadow: 5px 3px rgb(255, 94, 94);
 }
 
 .range-slider {
@@ -36,7 +43,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 #js-slider {
@@ -50,7 +57,7 @@
     -webkit-appearance: none; 
     width: 25px; 
     height: 25px;
-    border: 1px solid rgb(255, 70, 70); 
+    border: 1px solid rgb(255, 94, 94); 
     background: white; 
     border-radius: 50px;
 }
