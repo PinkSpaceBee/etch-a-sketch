@@ -3,7 +3,7 @@ let gridSize = document.querySelector('#js-grid-slider');
 let thumbValue = document.querySelector('#js-thumb-value');
 let resetBtn = document.querySelector('#js-reset-btn');
 let gridCell;
-let colNum = 64;
+let colNum = gridSize.value;
 let cells;
 
 function createGrid() {
