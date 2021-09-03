@@ -3,7 +3,7 @@ let gridSize = document.querySelector('#js-grid-slider');
 let thumbValue = document.querySelector('#js-thumb-value');
 let resetBtn = document.querySelector('#js-reset-btn');
 let gridCell;
-let colNum = 2;
+let colNum = 16;
 let cells;
 
 function createGrid() {
@@ -23,15 +23,15 @@ function setHoverEffect() {
        cell.style.backgroundColor = 'rgba(255, 135, 135, 1)';
    }))
 }
-setHoverEffect();
+//setHoverEffect();
 
 
 function setGridSize() {
     gridSize.addEventListener('change', () => {
         thumbValue.textContent = `${gridSize.value}x${gridSize.value}`;
+        colNum = gridSize.value;
     })
 }
-//setGridSize();
 
 
 function resetGrid() {
@@ -42,4 +42,7 @@ function resetGrid() {
 resetBtn.addEventListener('click', () => {
     resetGrid();
     createGrid();
+    setHoverEffect();
 })
+
+setHoverEffect();
