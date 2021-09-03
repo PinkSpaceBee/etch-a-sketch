@@ -14,6 +14,7 @@ function createGrid() {
         container.appendChild(gridCell);
     }
     setGridSize();
+    setHoverEffect();
 }
 createGrid();
 
@@ -23,8 +24,6 @@ function setHoverEffect() {
        cell.style.backgroundColor = 'rgba(255, 135, 135, 1)';
    }))
 }
-//setHoverEffect();
-
 
 function setGridSize() {
     gridSize.addEventListener('change', () => {
@@ -33,9 +32,7 @@ function setGridSize() {
     })
 }
 
-
 function resetGrid() {
-    //cells.forEach(cell => cell.remove());
     container.innerHTML = '';
 }
 
@@ -44,5 +41,3 @@ resetBtn.addEventListener('click', () => {
     createGrid();
     setHoverEffect();
 })
-
-setHoverEffect();
