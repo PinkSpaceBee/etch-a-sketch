@@ -3,7 +3,7 @@ let gridSize = document.querySelector('#js-grid-slider');
 let thumbValue = document.querySelector('#js-thumb-value');
 let resetBtn = document.querySelector('#js-reset-btn');
 let gridCell;
-let colNum = gridSize.value;
+let colNum = 2;
 let cells;
 
 function createGrid() {
@@ -35,7 +35,8 @@ function setGridSize() {
 
 
 function resetGrid() {
-    cells.forEach(cell => cell.remove());
+    //cells.forEach(cell => cell.remove());
+    container.innerHTML = '';
 }
 
 resetBtn.addEventListener('click', () => {
