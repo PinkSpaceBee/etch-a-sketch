@@ -1,46 +1,44 @@
 let container = document.querySelector('.js-container');
+let gridSize = document.querySelector('#js-grid-slider');
+let thumbValue = document.querySelector('#js-thumb-value');
+let resetBtn = document.querySelector('#js-reset-btn');
 let gridCell;
-let resetButton = document.querySelector('#js-reset-button');
+let colNum = 64;
 let cells;
-let slider = document.querySelector('#js-slider');
-let sliderValue = document.querySelector('#js-slider-value');
-let count;
-let xy = 4 * 5;
 
 function createGrid() {
-    for(let i = 0; i < xy; i++) {
+    document.documentElement.style.setProperty('--colNum', colNum);
+
+    for (let i = 0; i < colNum ** 2; i++) {
         gridCell = document.createElement('div');
         container.appendChild(gridCell);
-        hoverEffect();
     }
+    setGridSize();
 }
 createGrid();
 
-let value = document.querySelector('#js-slider-value');
-slider.addEventListener('change', () => {
-    count = slider.value;
+function setHoverEffect() {
+   cells = Array.from(container.children);
+   cells.forEach(cell => cell.addEventListener('mouseover', () => {
+       cell.style.backgroundColor = 'rgba(255, 135, 135, 1)';
+   }))
+}
+setHoverEffect();
 
-    value.textContent = `${count}x${count}`;
-    //slider.textContent = count;
-})
 
-function removeGrid() {
+function setGridSize() {
+    gridSize.addEventListener('change', () => {
+        thumbValue.textContent = `${gridSize.value}x${gridSize.value}`;
+    })
+}
+//setGridSize();
+
+
+function resetGrid() {
     cells.forEach(cell => cell.remove());
 }
 
-function hoverEffect() {
-    cells = Array.from(container.children);
-    cells.forEach(cell => cell.addEventListener('mouseover', () => {
-        cell.style.background = 'rgba(255, 135, 135, 1)';
-    }))
-}
-
-resetButton.addEventListener('click', () => {
-    removeGrid();
+resetBtn.addEventListener('click', () => {
+    resetGrid();
     createGrid();
 })
-    
-
-
-
-
