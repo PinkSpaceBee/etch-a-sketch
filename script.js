@@ -25,6 +25,15 @@ function setHoverEffect() {
    }))
 }
 
+function setEraseHoverEffect() {
+    cells = Array.from(container.children);
+    cells.forEach(cell => cell.addEventListener('mouseover', () => {
+        if (cell.style.backgroundColor == 'rgba(255, 135, 135, 1)') {
+            cell.style.backgroundColor = 'white';
+        }
+    }))
+}
+
 function setGridSize() {
     gridSize.addEventListener('change', () => {
         thumbValue.textContent = `${gridSize.value}x${gridSize.value}`;
@@ -40,4 +49,5 @@ resetBtn.addEventListener('click', () => {
     resetGrid();
     createGrid();
     setHoverEffect();
+    setEraseHoverEffect();
 })

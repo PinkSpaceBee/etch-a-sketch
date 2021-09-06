@@ -2,6 +2,7 @@
 :root {
     --colNum: 16;
 }
+
 h1 {
     display: flex;
     justify-content: center;
@@ -13,8 +14,10 @@ h1 {
     display: grid;
     grid-template-columns: repeat(var(--colNum), auto);
     margin: 30px auto;
-    width: 500px;
-    height: 500px;
+    max-width: 500px;
+    width: 65vw;
+    max-height: 500px;
+    height: 65vw;
     border: 1px solid rgba(255, 212, 196, 1);
 }
 
